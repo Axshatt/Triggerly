@@ -27,13 +27,13 @@ export function showToast(message, type = 'info') {
 }
 
 // --- Modal ---
-export function showModal(title, bodyHTML, actions = []) {
+export function showModal(title, bodyHTML, actions = [], extraClass = '') {
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
   overlay.id = 'modal-overlay';
 
   overlay.innerHTML = `
-    <div class="modal">
+    <div class="modal ${extraClass}">
       <div class="modal-header">
         <h3>${title}</h3>
         <button class="btn-icon btn-ghost" id="modal-close">✕</button>
@@ -112,4 +112,23 @@ export function timeAgo(dateStr) {
 
 export function truncate(str, len = 50) {
   return str.length > len ? str.slice(0, len) + '...' : str;
+}
+
+export function renderMarkdown(text) {
+  if (!text) return '';
+  let html = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/^### (.*$)/gim, '<h4 style="margin: 12px 0 6px; font-weight: 600;">$1</h4>')
+    .replace(/^## (.*$)/gim, '<h3 style="margin: 16px 0 8px; font-weight: 600;">$1</h3>')
+    .replace(/^# (.*$)/gim, '<h2 style="margin: 20px 0 10px; font-weight: 700;">$1</h2>')
+    .replace(/\*\*\*(.*?)\*\*\*/gim, '<strong><em>$1</em></strong>')
+    .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+    .replace(/^\s*[\-\*•]\s+(.*$)/gim, '<li style="margin-bottom: 4px; margin-left: 20px;">$1</li>')
+    .replace(/`([^`]+)`/g, '<code style="background: var(--color-light); padding: 2px 6px; border-radius: 4px; font-size: 0.85em;">$1</code>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+  return html;
 }
