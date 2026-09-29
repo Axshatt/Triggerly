@@ -1,0 +1,15 @@
+{
+  "name": "triggerly",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Automate your SuperProfile content-product workflows with AI",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
