@@ -268,6 +268,11 @@ export function renderSidebar(activePage) {
           <span class="nav-icon">${icons.triggers}</span>
           Triggers
         </a>
+        <a class="nav-item ${activePage === 'trigger-ai' ? 'active' : ''}" data-page="trigger-ai">
+          <span class="nav-icon">${icons.sparkles}</span>
+          Trigger AI
+          <span class="badge badge-lime" style="margin-left: auto; font-size: 0.625rem; padding: 2px 6px; font-weight: 700; border-radius: 999px;">AI</span>
+        </a>
         <a class="nav-item ${activePage === 'analytics' ? 'active' : ''}" data-page="analytics">
           <span class="nav-icon">${icons.analytics}</span>
           Analytics

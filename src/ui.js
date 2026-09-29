@@ -94,6 +94,7 @@ export const icons = {
   send: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2L9 11"/><path d="M18 2l-6 16-3-7-7-3z"/></svg>`,
   trash: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 6h10l-1 11H6L5 6z"/><path d="M3 6h14"/><path d="M8 6V4h4v2"/></svg>`,
   edit: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l5 5-9 9H3v-5l9-9z"/></svg>`,
+  sparkles: `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2l1.6 4.4L16 8l-4.4 1.6L10 14l-1.6-4.4L4 8l4.4-1.6L10 2z"/><path d="M15 13l.8 2.2L18 16l-2.2.8L15 19l-.8-2.2L12 16l2.2-.8L15 13z"/></svg>`,
 };
 
 // --- Format helpers ---

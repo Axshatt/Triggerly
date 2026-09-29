@@ -7,12 +7,13 @@ import { checkAuth, isAuthenticated, onAuthChange } from './auth.js';
 import { renderLanding } from './pages/landing.js';
 import { renderDashboard } from './pages/dashboard.js';
 import { renderTriggers } from './pages/triggers.js';
+import { renderTriggerAI } from './pages/trigger-ai.js';
 import { renderAnalytics } from './pages/analytics.js';
 import { renderPricing } from './pages/pricing.js';
 import { renderSettings } from './pages/settings.js';
 
 // Protected routes
-const protectedRoutes = ['/dashboard', '/triggers', '/analytics', '/settings'];
+const protectedRoutes = ['/dashboard', '/triggers', '/trigger-ai', '/analytics', '/settings'];
 
 // Route guard
 setBeforeRouteChange(async (path) => {
@@ -27,6 +28,7 @@ setBeforeRouteChange(async (path) => {
 registerRoute('/', renderLanding);
 registerRoute('/dashboard', renderDashboard);
 registerRoute('/triggers', renderTriggers);
+registerRoute('/trigger-ai', renderTriggerAI);
 registerRoute('/analytics', renderAnalytics);
 registerRoute('/pricing', renderPricing);
 registerRoute('/settings', renderSettings);
